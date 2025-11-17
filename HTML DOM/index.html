@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML DOM</title>
+
+    <style>
+        .default {
+            color: #000000;
+            border: 2px solid red;
+            padding: 10px;
+        }
+        .active {
+            color: navy;
+            font-weight: bold;
+            border: 2px solid blue;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p id="a"></p>
+    <hr>
+
+    <h2>DOM Document</h2>
+    <h5>This is the first paragraph. It will turn gold.</h5>
+    <div>This is a regular div, it won't change.</div>
+    <h5>This is the second paragraph. It will also turn gold.</h5>
+
+    <hr>
+
+    <div class="product-card">Card 1</div>
+    <div class="product-card special">Card 2 (Also special)</div>
+
+    <hr>
+
+    <p id="haha">haha</p>
+
+    <hr>
+
+    <button id="btn" class="default">Click Me to Change Style</button>
+
+    <hr>
+
+    <p id="stylish">STYLING A TEXT</p>
+    <button onclick="gold()">gold</button>
+    <button onclick="diamond()">diamond</button>
+    <button onclick="black()">default</button>
+
+    <hr>
+
+    <a id="mylink">The Link</a>
+
+    <hr>
+
+    <p id="mymsg">MESSAGE</p>
+    <button id="changebtn">new</button>
+    <button id="defaultbtn">old</button>
+
+    <hr>
+
+    <h1>To-Do List</h1>
+    <ul id="todo-list">
+        <li class="task">Buy groceries</li>
+        <li class="task">Finish JavaScript homework</li>
+        <li class="task completed">Call the mechanic</li>
+        <li class="task">Water the plants</li>
+        <li>Unrelated Item</li>
+    </ul>
+
+    <button id="highlightBtn">Highlight All Pending Tasks</button>
+    
+</body>
+<script src="index.js"></script>
+</html>
+
