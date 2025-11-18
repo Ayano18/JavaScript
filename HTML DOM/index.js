@@ -80,23 +80,53 @@ const defaultbutton = document.getElementById("defaultbtn");
 
 const istg = document.getElementById("mymsg");
 
-changebutton.onclick = function(){
+changebutton.onclick = function(){ //traditional functions
   istg.textContent = "NEW MESSAGE";
 };
-defaultbutton.onclick = function(){
+defaultbutton.onclick = () => { //arrow functions
   istg.textContent = "OLD MESSAGE";
 };
 
 
+// document.querySelectorAll()
 const highlightButton = document.querySelector('#highlightBtn');
+const taskElements = document.querySelectorAll('li.task');
+
 
 highlightButton.addEventListener('click', () => {
-
-    const taskElements = document.querySelectorAll('li.task');
-
-    taskElements.forEach(task => {
+    taskElements.forEach(task => {  //arrow function
         task.style.backgroundColor = 'lightgreen'; 
-        task.style.fontWeight = 'bold';
         task.style.border = '1px solid black';
     });
+});
+
+function coloring(){
+  taskElements.forEach(task => {  //arrow function
+    task.style.backgroundColor = "lightyellow";
+    task.style.border = "1px solid black"
+  });
+}
+
+function removing(){
+  taskElements.forEach(function(task){  //traditional function
+    task.style.backgroundColor = "transparent";
+    task.style.border = "none";
+  });
+}
+
+// JS FORMS
+
+const inputElement = document.getElementById('nameInput');
+const buttonElement = document.getElementById('greetButton');
+const outputElement = document.getElementById('outputMessage');
+
+buttonElement.addEventListener('click', function() {
+    
+    const userName = inputElement.value;
+    
+    if (userName.trim() === '') {
+        outputElement.textContent = 'Please enter a name!';
+    } else {
+        outputElement.textContent = `Hello, ${userName}! Welcome to the DOM!`;
+    }
 });
