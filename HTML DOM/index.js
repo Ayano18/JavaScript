@@ -114,7 +114,8 @@ function removing(){
   });
 }
 
-// JS FORMS
+
+// JS DOM FORMS
 
 const inputElement = document.getElementById('nameInput');
 const buttonElement = document.getElementById('greetButton');
@@ -130,3 +131,74 @@ buttonElement.addEventListener('click', function() {
         outputElement.textContent = `Hello, ${userName}! Welcome to the DOM!`;
     }
 });
+
+const inAge = document.getElementById("age");
+const btnValid = document.getElementById("validation");
+const outAge = document.getElementById("outputAge");
+
+btnValid.addEventListener('click', function(){
+    let check = inAge.value;
+    let text;
+    if(check === ""){
+      text = "Please input your age";
+    } else if (check <= 0){
+      text = "Unborn shit";
+    } else if (check >= 18){
+      text = "Legal shit";
+    } else {
+      text = check + " Years Old";
+    }
+
+    outAge.innerHTML = text;
+});
+
+// JS DOM Events
+
+//  a function is called from the event handler
+function change(txt){
+  txt.innerHTML = "Clicked Baited!"
+};
+
+// Assign Events Using the HTML DOM
+document.getElementById("btndate").onclick = GetDates;
+function GetDates(){
+  let day = new Date();
+  document.getElementById("returndate").innerHTML = day.getDate();
+};
+
+/*
+I will add more I felt lazy
+*/
+
+// JS EventListener
+
+//  It has three main parts:
+// element.addEventListener(event, function, useCapture);
+// element.removeEventListener(event, function, useCapture);
+
+const count = document.getElementById("countplus");
+
+//internal function
+count.addEventListener('click', () => { //I use arrow function
+  let looptext = "";
+  for(let i = 1; i <= 10; i++){
+    looptext += i + " ";
+  }
+
+  document.getElementById("pcount").innerHTML = looptext;
+});
+
+
+const countless = document.getElementById("countless");
+
+//external function
+decrement = () => { //I use arrow function
+  let textloop = "";
+  for(let i = 10; i >= 0; i--){
+    textloop += i + " ";
+  }
+
+  document.getElementById("pcountless").innerHTML = textloop;
+};
+
+countless.addEventListener('click', decrement);
